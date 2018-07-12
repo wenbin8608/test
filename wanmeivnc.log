@@ -1,0 +1,119 @@
+    1  vim /etc/apt/sources.list
+    2  apt update
+    3  apt install lrzsz
+    4  install x-window-system-core
+    5  apt install x-window-system-core
+    6  apt-get install xinit 
+    7  apt-get install  gdm
+	apt install -y ubuntu-desktop
+    8  nvidia-smi
+    9  lspci | grep VGA
+   10  apt install -y libxv1:i386 libglu1-mesa:i386
+   11  reboot
+   12  ifconfig
+   13  vim /etc/resolv.conf 
+   14  vim /etc/ssh/sshd_config 
+   15  /etc/init.d/ssh restart
+   16  passwd root
+   17  mkdir /tools
+   18  rz
+   19  cd /tools/
+   20  rz
+   21  dpkg -i turbovnc_2.1.1_amd64.deb
+   22  dpkg -i virtualgl_2.5.2_amd64.deb
+   23  dpkg -i virtualgl32_2.5.2_amd64.deb
+   24  echo 'export PATH=/opt/TurboVNC/bin:/opt/VirtualGL/bin:$PATH' >> /etc/profile
+   25  apt-get install xwayland weston wayland-protocols libgles2-mesa-dev mesa-utils-extra libglfw3-dev
+   26  apt-get install gstreamer1.0-*
+   27  apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+   28  apt-get update
+   29  apt-get install gstreamer1.0-* 
+   30  apt-get install ros-kinetic-desktop-full
+   31  rosdep init
+   32  echo "source /opt/ros/kinetic/setup.bash" >> /etc/profile
+   33  apt-get install python-rosinstall
+   34  sed -i '/^rosrun_prefix=/s/rosrun_prefix="/&vglrun/' /opt/ros/kinetic/bin/rosrun 
+   35  apt-get install ros-kinetic-rqt-multiplot
+   36  nvidia-xconfig
+   37  vglserver_config
+   38  apt-get install gstreamer1.0-* libgstreamer1.0-* libgstreamermm-1.0-* libgstreamer-plugins-*
+   39  apt-get install  libgstreamer1.0-* libgstreamermm-1.0-* libgstreamer-plugins-*
+   40  apt install libandroid-properties1:i386 -y
+   41  apt install libhybris-common1:i386 -y
+   42  apt install libmedia1:i386 -y
+   43  apt-get install gstreamer1.0-*
+   44  apt-get install libopencv-dev
+   45  apt-get install libnlopt-dev -y
+   apt-get install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu cpp-aarch64-linux-gnu
+   apt-get install libeigen3-dev libeigen3-doc
+   46  reboot
+   47  vim /etc/pam.d/common-auth 
+   48  vim /etc/vncpass.sh
+   49  chmod +x /etc/vncpass.sh 
+   50  vim /etc/profile
+   51  cd /opt/TurboVNC/bin/
+   52  mv vncpasswd 
+   53  rm -rf vncpasswd
+   54  rz
+   55  mv vncpasswd_tigvnc vncpasswd
+   56  chmod 755 vncpasswd 
+   57  ll
+   58  adduser test2
+   59  reboot
+   60  apt install -y  gnome-session-flashback
+   61  reboot
+   62  usermod -a -G vglusers test2
+   63  history >/tmp.1og
+   64  history >/tmp/gnome_gui_1og
+   65  cd /tmp/
+   66  sz gnome_gui_1og 
+   67  vim /opt/ros/kinetic/bin/rosrun 
+   68  vglserver_config 
+   69  reboot
+   70  cd /tools/
+   71  sh pbis-open-8.5.4.334.linux.x86_64.deb.sh 
+   72  vim /etc/nsswitch.conf 
+   73  apt remove avahi-daemon 
+   74  ping shaitgrt01
+   75  vim /etc/resolv.conf 
+   76  domainjoin-cli join cn.zmt.local frank.chen
+   77  /opt/pbis/bin/config HomeDirTemplate '%H/%D/%U'
+   78  /opt/pbis/bin/config LoginShellTemplate /bin/bash
+   79  /opt/pbis/bin/config HomeDirUmask 077
+   80  /opt/pbis/bin/config UserDomainPrefix cn.zmt.local
+   81  /opt/pbis/bin/config AssumeDefaultDomain true
+   82  history 
+   83  exit
+   84  apt-get install libeigen3-dev libeigen3-doc
+   85  rz
+   86  cd /tools/
+   87  rz
+   88  ls
+   89  sh pbis-open-8.5.4.334.linux.x86_64.deb.sh 
+   90  vim /etc/profile
+   91  chmod 700 /etc/sudoers
+   92  vim /etc/sudoers
+   93  sed -i "58s#^.*\$#&\nmodify_username()\n{\n    echo \$USER | awk -F\\\\\\\\ '{print \$NF}'\n}\n#;s#\\\\u#\$(modify_username)#g" /etc/skel/.bashrc
+   94  vim /etc/samba/smb.conf 
+   95  /opt/pbis/bin/samba-interop-install --install
+   96  vim /etc/vncpass.sh 
+   97  vim /etc/profile
+   98  reboot
+   99  df -h
+  100  apt-get install openjdk-8-jdk
+  101  history 
+  102  apt install ubuntu-desktop
+  103  vim /etc/profile
+  104  source /etc/profile
+  105  cd /tools/pbis-open-8.5.4.334.linux.x86_64.deb/
+  106  cd ..
+  107  rz
+  108  tar xvf eclipse-cpp-neon-3-linux-gtk-x86_64.tar.gz  -C /opt/
+  109  vim /usr/share/applications/eclipse.desktop
+  110  chmod u+x /usr/share/applications/eclipse.desktop 
+  111  history >/tmp/2.log
+  112  cd /tmp/
+  113  vim 2.log 
+  114  ln -s /usr/bin/arm-linux-gnueabihf-g++-4.9 /usr/bin/arm-linux-gnueabihf-g++
+  115  ln -s /usr/bin/arm-linux-gnueabihf-gcc-4.9 /usr/bin/arm-linux-gnueabihf-gcc
+  116  history >/tmp/wanmeivnc.log
